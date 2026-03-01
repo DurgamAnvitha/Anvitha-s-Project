@@ -1,0 +1,25 @@
+services:
+  # Backend
+  - type: web
+    name: avanthi-backend
+    env: java
+    rootDir: MyCampusSmartDashboardSystem
+    buildCommand: ./mvnw clean install
+    startCommand: java -jar target/*.jar
+    envVars:
+      - key: SPRING_DATA_MONGODB_URI
+        sync: false # Set this in Render dashboard
+
+  # Frontend
+  - type: web
+    name: avanthi-frontend
+    env: static
+    rootDir: Frontend
+    buildCommand: npm install && npm run build
+    publishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: avanthi-backend
+          property: host

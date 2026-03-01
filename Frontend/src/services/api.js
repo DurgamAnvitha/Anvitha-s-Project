@@ -1,6 +1,10 @@
 import axios from 'axios';
 
 const getBaseUrl = () => {
+    // 1. Check for Vite environment variable (recommended for cloud deployment)
+    if (import.meta.env.VITE_API_URL) return import.meta.env.VITE_API_URL;
+
+    // 2. Fallback to manual storage or local default
     const stored = localStorage.getItem('API_URL');
     if (stored && stored.includes('8080')) return stored;
     return 'http://localhost:8080/api';
