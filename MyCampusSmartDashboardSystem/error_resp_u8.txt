@@ -1,0 +1,94 @@
+﻿curl.exe : Note: 
+Unnecessary use of -X or 
+--request, POST is already 
+inferred.
+At line:1 char:1
++ curl.exe -v -X POST http:/
+/localhost:8080/api/students
+ -H "Content-Ty ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
+    + CategoryInfo          
+    : NotSpecified: (Note:  
+   Unnecessa...ready infe   
+ rred.:String) [], Remot    
+eException
+    + FullyQualifiedErrorId 
+    : NativeCommandError
+ 
+* Host localhost:8080 was 
+resolved.
+* IPv6: ::1
+* IPv4: 127.0.0.1
+  % Total    % Received % 
+Xferd  Average Speed   Time 
+   Time     Time  Current
+                            
+     Dload  Upload   Total  
+ Spent    Left  Speed
+
+  0     0    0     0    0   
+  0      0      0 --:--:-- 
+--:--:-- --:--:--     0*   
+Trying [::1]:8080...
+* Established connection to 
+localhost (::1 port 8080) 
+from ::1 port 64681 
+* using HTTP/1.x
+> POST /api/students 
+HTTP/1.1
+
+> Host: localhost:8080
+
+> User-Agent: curl/8.16.0
+
+> Accept: */*
+
+> Content-Type: 
+application/json
+
+> Content-Length: 13
+
+> 
+
+} [13 bytes data]
+* upload completely sent 
+off: 13 bytes
+< HTTP/1.1 500 
+
+< Vary: Origin
+
+< Vary: Access-Control-Reque
+st-Method
+
+< Vary: Access-Control-Reque
+st-Headers
+
+< Content-Type: 
+application/json
+
+< Transfer-Encoding: chunked
+
+< Date: Sat, 28 Feb 2026 
+17:07:18 GMT
+
+< Connection: close
+
+< 
+
+{ [117 bytes data]
+
+100   124    0   111  100   
+ 13   4131    483 --:--:-- 
+--:--:-- --:--:--  4769
+* shutting down connection 
+#0
+curl: (3) unmatched close 
+brace/bracket in URL 
+position 29:
+Student","rfidUid":"RFID002"
+}
+                            
+^
+{"timestamp":"2026-02-28T22:37:18.3048627","error":"JSON parse error: Unexpected end-of-input in VALUE_STRING"}

@@ -1,0 +1,3 @@
+﻿C:\Users\harsh\Desktop\Avinash-Project\MyCampusSmartDashboardSystem\src\main\java\com\smartclass\dashboard\controller\GradesController.java
+C:\Users\harsh\Desktop\Avinash-Project\MyCampusSmartDashboardSystem\src\main\java\com\smartclass\dashboard\entity\Grades.java
+C:\Users\harsh\Desktop\Avinash-Project\MyCampusSmartDashboardSystem\src\main\java\com\smartclass\dashboard\repository\GradesRepository.java

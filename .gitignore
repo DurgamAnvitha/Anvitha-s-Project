@@ -1,0 +1,40 @@
+# Logic for Root Gitignore
+
+# Node / Frontend
+Frontend/node_modules/
+Frontend/dist/
+Frontend/.env
+Frontend/.env.local
+Frontend/.env.development.local
+Frontend/.env.test.local
+Frontend/.env.production.local
+Frontend/npm-debug.log*
+Frontend/yarn-debug.log*
+Frontend/yarn-error.log*
+
+# Java / Spring Boot
+MyCampusSmartDashboardSystem/target/
+MyCampusSmartDashboardSystem/.mvn/wrapper/maven-wrapper.jar
+MyCampusSmartDashboardSystem/*.class
+MyCampusSmartDashboardSystem/*.log
+MyCampusSmartDashboardSystem/*.ctxt
+MyCampusSmartDashboardSystem/.mtj.tmp/
+MyCampusSmartDashboardSystem/*.war
+MyCampusSmartDashboardSystem/*.nar
+MyCampusSmartDashboardSystem/*.ear
+MyCampusSmartDashboardSystem/*.zip
+MyCampusSmartDashboardSystem/*.tar.gz
+MyCampusSmartDashboardSystem/*.rar
+MyCampusSmartDashboardSystem/src/main/resources/application.properties
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Temporary Files
+tmp/
+coverage/
+.temp/
