@@ -1,8 +1,16 @@
 import axios from 'axios';
 
+const formatUrl = (url) => {
+    if (!url) return 'http://localhost:8080/api';
+    let clean = url.trim();
+    if (clean.endsWith('/')) clean = clean.substring(0, clean.length - 1);
+    if (!clean.endsWith('/api')) clean += '/api';
+    return clean;
+};
+
 const getBaseUrl = () => {
     // 1. Check for Vite environment variable (recommended for cloud deployment)
-    if (import.meta.env.VITE_API_URL) return import.meta.env.VITE_API_URL;
+    if (import.meta.env.VITE_API_URL) return formatUrl(import.meta.env.VITE_API_URL);
 
     // 2. Production Fallback: Force Render URL if on Vercel
     if (window.location.hostname.includes('vercel.app')) {
@@ -11,7 +19,7 @@ const getBaseUrl = () => {
 
     // 3. Fallback to manual storage or local default
     const stored = localStorage.getItem('API_URL');
-    if (stored && (stored.includes('8080') || stored.includes('render.com'))) return stored;
+    if (stored && (stored.includes('8080') || stored.includes('render.com'))) return formatUrl(stored);
     return 'http://localhost:8080/api';
 };
 
