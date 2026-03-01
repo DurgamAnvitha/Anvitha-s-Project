@@ -266,9 +266,12 @@ const AdminDashboard = () => {
         if (isRefresh) setRefreshing(true);
 
         try {
-            // Force reset storage URL if it looks wrong
-            if (localStorage.getItem('API_URL') && !localStorage.getItem('API_URL').includes('8080')) {
-                localStorage.removeItem('API_URL');
+            // Clear stale localhost URL if we are on the live site
+            if (window.location.hostname.includes('vercel.app')) {
+                const stored = localStorage.getItem('API_URL');
+                if (stored && stored.includes('localhost')) {
+                    localStorage.removeItem('API_URL');
+                }
             }
 
             const [stdRes, secRes, tchRes, attRes, grdRes] = await Promise.allSettled([
