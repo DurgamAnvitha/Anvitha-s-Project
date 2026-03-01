@@ -2,10 +2,8 @@ services:
   # Backend
   - type: web
     name: avanthi-backend
-    env: java
+    env: docker
     rootDir: MyCampusSmartDashboardSystem
-    buildCommand: ./mvnw clean install -DskipTests
-    startCommand: java -jar target/*.jar
     envVars:
       - key: SPRING_DATA_MONGODB_URI
         sync: false # You will paste your MongoDB URL in the Render dashboard
